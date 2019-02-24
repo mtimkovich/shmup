@@ -3,51 +3,22 @@
 [ext_resource path="res://Missile.gd" type="Script" id=1]
 [ext_resource path="res://img/missile.png" type="Texture" id=2]
 
-
 [sub_resource type="RectangleShape2D" id=1]
 
-custom_solver_bias = 0.0
-extents = Vector2( 10, 10 )
 
 [node name="Missile" type="RigidBody2D"]
-
-input_pickable = false
-collision_layer = 1
 collision_mask = 0
-mode = 0
-mass = 1.0
-friction = 1.0
-bounce = 0.0
 gravity_scale = 0.0
-custom_integrator = false
-continuous_cd = 0
-contacts_reported = 0
-contact_monitor = false
-sleeping = false
-can_sleep = true
-linear_velocity = Vector2( 0, 0 )
-linear_damp = -1.0
-angular_velocity = 0.0
-angular_damp = -1.0
 script = ExtResource( 1 )
-_sections_unfolded = [ "Collision", "Linear" ]
 velocity = 500
 
-[node name="Sprite" type="Sprite" parent="." index="0"]
-
+[node name="Sprite" type="Sprite" parent="."]
 scale = Vector2( 2, 2 )
 texture = ExtResource( 2 )
-_sections_unfolded = [ "Transform" ]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
-
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
-_sections_unfolded = [ "Visibility" ]
 
-[node name="Visibility" type="VisibilityNotifier2D" parent="." index="2"]
-
-rect = Rect2( -10, -10, 20, 20 )
+[node name="Visibility" type="VisibilityNotifier2D" parent="."]
 
 [connection signal="screen_exited" from="Visibility" to="." method="_on_Visibility_screen_exited"]
-
-

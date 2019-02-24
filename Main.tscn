@@ -1,98 +1,51 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Main.gd" type="Script" id=1]
 [ext_resource path="res://Background.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Missile.tscn" type="PackedScene" id=4]
-[ext_resource path="res://ARCADE_N.TTF" type="DynamicFontData" id=5]
+[ext_resource path="res://ARCADE_N.TTF" type="DynamicFontData" id=4]
 
 [sub_resource type="DynamicFont" id=1]
 
-size = 16
-use_mipmaps = false
-use_filter = false
-font_data = ExtResource( 5 )
-_sections_unfolded = [ "Font", "Settings" ]
+font_data = ExtResource( 4 )
 
-[node name="Main" type="Node" index="0"]
-
+[node name="Main" type="Node"]
 script = ExtResource( 1 )
 
-[node name="Background" parent="." index="0" instance=ExtResource( 2 )]
+[node name="Background" parent="." instance=ExtResource( 2 )]
+vframes = 1
+hframes = 1
 
-[node name="Player" parent="." index="1" instance=ExtResource( 3 )]
-
+[node name="Player" parent="." instance=ExtResource( 3 )]
 position = Vector2( 257.226, 669.304 )
-speed = 300
-Missile = ExtResource( 4 )
 
-[node name="Missiles" type="Node" parent="." index="2"]
+[node name="Missile" type="Node2D" parent="."]
 
-[node name="HUD" type="Control" parent="." index="3"]
+[node name="HUD" type="Control" parent="."]
+margin_top = 20.0
+margin_right = 115.0
+margin_bottom = 62.0
 
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_right = 40.0
-margin_bottom = 40.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-_sections_unfolded = [ "Rect" ]
-
-[node name="1UP" type="Label" parent="HUD" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 26.0
-margin_top = 17.0
-margin_right = 93.0
-margin_bottom = 42.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
+[node name="1UP" type="Label" parent="HUD"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -96.0
+margin_top = -2.0
+margin_right = -16.0
+margin_bottom = 20.0
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 1, 0, 0, 1 )
 text = "1UP"
 align = 2
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Visibility", "custom_colors", "custom_fonts" ]
 
-[node name="Score" type="Label" parent="HUD" index="1"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 41.0
-margin_top = 35.0
-margin_right = 108.0
-margin_bottom = 60.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
+[node name="Score" type="Label" parent="HUD"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -67.0
+margin_top = -25.0
 custom_fonts/font = SubResource( 1 )
 text = "00"
 align = 2
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "custom_fonts" ]
-
-[connection signal="point" from="Player" to="." method="update_score"]
-
 

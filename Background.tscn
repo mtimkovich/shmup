@@ -3,7 +3,6 @@
 [ext_resource path="res://img/starfield_spritesheet.png" type="Texture" id=1]
 [ext_resource path="res://Background.gd" type="Script" id=2]
 
-
 [node name="Background" type="Sprite"]
 
 texture = ExtResource( 1 )

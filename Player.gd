@@ -1,34 +1,38 @@
 extends Area2D
 
-signal point
-var screensize
-export (int) var speed
 const X_MARGIN = 20
-var hitbox
-export (PackedScene) var Missile
+
+onready var screensize = get_viewport_rect().size
+onready var hitbox = $Hitbox.get_shape().get_extents()
+
+var dragging = false
+var Missile = preload('res://Missile.tscn')
 
 func _ready():
-	screensize = get_viewport_rect().size
 	position.x = screensize.x/2
 	position.y = screensize.y-30
-	hitbox = $Hitbox.get_shape().get_extents()
+	set_process_input(true)
 	
 func _process(delta):
-	var velocity = Vector2()
-	if Input.is_action_pressed('ui_right'):
-		velocity.x += 1
-	if Input.is_action_pressed('ui_left'):
-		velocity.x -= 1
-	
-	velocity = velocity.normalized()
-		
-	position.x += velocity.x * speed * delta
-	position.x = clamp(position.x, X_MARGIN+hitbox.x, screensize.x-X_MARGIN-hitbox.x)
+	if dragging:
+		var mouse_pos = get_viewport().get_mouse_position()
+		set_position(mouse_pos)
 
+func set_position(pos):
+	position.x = pos.x
+	position.x = clamp(position.x, X_MARGIN+hitbox.x, screensize.x-X_MARGIN-hitbox.x)
+	
 func shoot():
 	for i in [-1, 1]:
 		var missile = Missile.instance()
 		missile.position = position - Vector2(i*hitbox.x, hitbox.y*2)
-		get_node('../Missiles').add_child(missile)
-		emit_signal('point')
-		
+		get_parent().get_node('Missile').add_child(missile)
+#		globals.score += 1
+	
+func _input(event):
+	if event is InputEventMouseButton and not event.is_pressed():
+		dragging = false
+
+func _on_Touchbox_input_event(viewport, event, shape_idx):
+	if event is InputEventMouseButton and event.is_pressed():
+		dragging = true
