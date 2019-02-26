@@ -7,6 +7,7 @@ onready var hitbox = $Hitbox.get_shape().get_extents()
 
 var dragging = false
 var Missile = preload('res://Missile.tscn')
+var touch_pos = Vector2()
 
 func _ready():
 	position.x = screensize.x/2
@@ -14,9 +15,11 @@ func _ready():
 	set_process_input(true)
 	
 func _process(delta):
+	# Don't care about dragging on desktop.
+#	if dragging or not OS.has_touchscreen_ui_hint():
 	if dragging:
 		var mouse_pos = get_viewport().get_mouse_position()
-		set_position(mouse_pos)
+		set_position(mouse_pos + touch_pos)
 
 func set_position(pos):
 	position.x = pos.x
@@ -36,3 +39,4 @@ func _input(event):
 func _on_Touchbox_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton and event.is_pressed():
 		dragging = true
+		touch_pos = position - event.position

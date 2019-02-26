@@ -5,10 +5,8 @@
 
 [sub_resource type="RectangleShape2D" id=1]
 
-
 [sub_resource type="CircleShape2D" id=2]
-
-radius = 35.4155
+radius = 57.0778
 
 [node name="Player" type="Area2D"]
 script = ExtResource( 1 )
@@ -27,7 +25,6 @@ shape = SubResource( 1 )
 
 [node name="DPS" type="Timer" parent="."]
 wait_time = 0.05
-autostart = true
 
 [node name="Touchbox" type="Area2D" parent="."]
 
