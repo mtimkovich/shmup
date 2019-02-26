@@ -16,12 +16,16 @@ _global_script_class_icons={
 [application]
 
 config/name="Shmup"
-run/main_scene="res://Main.tscn"
+run/main_scene="res://Title.tscn"
 config/icon="res://img/ship.png"
 
 [autoload]
 
 globals="*res://globals.gd"
+
+[debug]
+
+gdscript/warnings/enable=false
 
 [display]
 

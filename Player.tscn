@@ -28,7 +28,6 @@ shape = SubResource( 1 )
 
 [node name="DPS" type="Timer" parent="."]
 wait_time = 0.05
-autostart = true
 
 [node name="Touchbox" type="Area2D" parent="."]
 

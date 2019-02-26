@@ -4,23 +4,13 @@
 [ext_resource path="res://Background.gd" type="Script" id=2]
 
 [node name="Background" type="Sprite"]
-
 texture = ExtResource( 1 )
 centered = false
-vframes = 3
-hframes = 5
 region_enabled = true
 region_rect = Rect2( 0, 0, 480, 720 )
 script = ExtResource( 2 )
-_sections_unfolded = [ "Animation", "Offset", "Region" ]
 
-[node name="Timer" type="Timer" parent="." index="0"]
-
-process_mode = 1
+[node name="Timer" type="Timer" parent="."]
 wait_time = 0.05
-one_shot = false
-autostart = true
 
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
-
-

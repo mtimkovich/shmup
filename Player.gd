@@ -16,8 +16,7 @@ func _ready():
 	
 func _process(delta):
 	# Don't care about dragging on desktop.
-#	if dragging or not OS.has_touchscreen_ui_hint():
-	if dragging:
+	if dragging or (not OS.has_touchscreen_ui_hint() and not globals.DEBUG):
 		var mouse_pos = get_viewport().get_mouse_position()
 		set_position(mouse_pos + touch_pos)
 
@@ -40,3 +39,6 @@ func _on_Touchbox_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton and event.is_pressed():
 		dragging = true
 		touch_pos = position - event.position
+
+func _on_Main_start():
+	$DPS.start()

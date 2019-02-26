@@ -9,7 +9,7 @@ An unimaginatively named shmup game made using [Godot][godot].
 - [X] Background image
 - [ ] Enemies
 - [ ] Enemy patterns
-- [ ] Start and End Screen
+- [x] Start and End Screen
 - [ ] Sound
 - [x] Mobile and touch controls
 - [ ] Making a fun and challenging game that people would want to play
