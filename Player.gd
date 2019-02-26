@@ -27,7 +27,7 @@ func set_position(pos):
 func shoot():
 	for i in [-1, 1]:
 		var missile = Missile.instance()
-		missile.position = position - Vector2(i*hitbox.x-5*i, hitbox.y*2)
+		missile.position = position - Vector2(i*(hitbox.x+3), hitbox.y*2)
 		get_parent().get_node('Missile').add_child(missile)
 #		globals.score += 1
 	

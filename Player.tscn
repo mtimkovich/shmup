@@ -1,15 +1,13 @@
 [gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Player.gd" type="Script" id=1]
-[ext_resource path="res://img/ship.png" type="Texture" id=2]
+[ext_resource path="res://img/ship2.png" type="Texture" id=2]
 [ext_resource path="res://sfx/qubodupFireLoop.ogg" type="AudioStream" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
-
 extents = Vector2( 15.5501, 15.4984 )
 
 [sub_resource type="CircleShape2D" id=2]
-
 radius = 180.271
 
 [node name="Player" type="Area2D"]
@@ -19,6 +17,7 @@ __meta__ = {
 }
 
 [node name="Sprite" type="Sprite" parent="."]
+rotation = -1.5708
 scale = Vector2( 3, 3 )
 texture = ExtResource( 2 )
 

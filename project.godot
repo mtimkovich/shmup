@@ -17,7 +17,7 @@ _global_script_class_icons={
 
 config/name="Shmup"
 run/main_scene="res://Title.tscn"
-config/icon="res://img/ship.png"
+config/icon="res://img/ship2.png"
 
 [autoload]
 
