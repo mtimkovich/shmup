@@ -1,11 +1,11 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Missile.gd" type="Script" id=1]
-[ext_resource path="res://img/missile.png" type="Texture" id=2]
+[ext_resource path="res://img/laser4.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
 
-extents = Vector2( 4.07661, 10 )
+extents = Vector2( 3.33456, 8.95516 )
 
 [node name="Missile" type="RigidBody2D"]
 collision_mask = 0
@@ -14,13 +14,13 @@ script = ExtResource( 1 )
 velocity = 500
 
 [node name="Sprite" type="Sprite" parent="."]
-scale = Vector2( 2, 2 )
 texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
 
 [node name="Visibility" type="VisibilityNotifier2D" parent="."]
-scale = Vector2( 0.458044, 1 )
+position = Vector2( 0.0749436, 0.0749445 )
+scale = Vector2( 0.345626, 0.902571 )
 
 [connection signal="screen_exited" from="Visibility" to="." method="_on_Visibility_screen_exited"]

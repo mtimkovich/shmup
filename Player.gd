@@ -27,7 +27,7 @@ func set_position(pos):
 func shoot():
 	for i in [-1, 1]:
 		var missile = Missile.instance()
-		missile.position = position - Vector2(i*hitbox.x-4*i, hitbox.y*1.5)
+		missile.position = position - Vector2(i*hitbox.x-5*i, hitbox.y*2)
 		get_parent().get_node('Missile').add_child(missile)
 #		globals.score += 1
 	
@@ -42,3 +42,4 @@ func _on_Touchbox_input_event(viewport, event, shape_idx):
 
 func _on_Main_start():
 	$DPS.start()
+	$BeamSound.play()

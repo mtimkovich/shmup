@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/ship.png-687e14b63ef3392fe7e91f9d963a2220.stex"
+path="res://.import/laser.png-53d7095baa477b32fe45f91ffe8f1592.stex"
 
 [deps]
 
-source_file="res://img/ship.png"
-dest_files=[ "res://.import/ship.png-687e14b63ef3392fe7e91f9d963a2220.stex" ]
+source_file="res://img/laser.png"
+dest_files=[ "res://.import/laser.png-53d7095baa477b32fe45f91ffe8f1592.stex" ]
 
 [params]
 
@@ -17,7 +17,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=false
+flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

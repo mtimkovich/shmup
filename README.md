@@ -10,13 +10,17 @@ An unimaginatively named shmup game made using [Godot][godot].
 - [ ] Enemies
 - [ ] Enemy patterns
 - [x] Start and End Screen
-- [ ] Sound
+- [x] Sound
 - [x] Mobile and touch controls
 - [ ] Making a fun and challenging game that people would want to play
 
 ## Credits
-- Sprites lovingly stolen from *Galaga*.
-- [Background image by ASDFGHJKLDQREW][bg]
+- Sprites by [Master484][master484]
+- Sound effects by [quobodup][quobodup] and [bart][bart]
+- Background image by [ASDFGHJKLDQREW][bg]
 
 [godot]: https://godotengine.org/
 [bg]: https://www.deviantart.com/asdfghjkldqrew/art/Space-743777252
+[master484]: https://opengameart.org/users/master484
+[quobodup]: https://opengameart.org/users/quobodup
+[bart]: https://opengameart.org/users/bart

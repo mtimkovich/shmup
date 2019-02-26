@@ -1,20 +1,21 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Background.tscn" type="PackedScene" id=1]
 [ext_resource path="res://HUD.tscn" type="PackedScene" id=2]
 [ext_resource path="res://ARCADE_N.TTF" type="DynamicFontData" id=3]
 [ext_resource path="res://Start.gd" type="Script" id=4]
-[ext_resource path="res://arcade.tres" type="DynamicFont" id=5]
+[ext_resource path="res://sfx/Pickup_Coin.wav" type="AudioStream" id=5]
+[ext_resource path="res://arcade.tres" type="DynamicFont" id=6]
+
+[sub_resource type="DynamicFont" id=1]
+
+font_data = ExtResource( 3 )
 
 [sub_resource type="DynamicFont" id=2]
 
 font_data = ExtResource( 3 )
 
 [sub_resource type="DynamicFont" id=3]
-
-font_data = ExtResource( 3 )
-
-[sub_resource type="DynamicFont" id=4]
 
 font_data = ExtResource( 3 )
 
@@ -35,7 +36,7 @@ margin_left = -42.0
 margin_top = -221.5
 margin_right = 42.0
 margin_bottom = -198.5
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 1 )
 text = "shmup"
 align = 1
 
@@ -44,18 +45,21 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -91.5
-margin_top = -47.0
-margin_right = 91.5
-margin_bottom = 47.0
+margin_left = -153.5
+margin_top = -106.0
+margin_right = 153.5
+margin_bottom = 106.0
 mouse_filter = 1
 mouse_default_cursor_shape = 2
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 1, 0, 0, 1 )
 text = "start"
 align = 1
 valign = 1
 script = ExtResource( 4 )
+
+[node name="Coin" type="AudioStreamPlayer2D" parent="Start"]
+stream = ExtResource( 5 )
 
 [node name="©" type="Label" parent="."]
 anchor_left = 0.5
@@ -66,7 +70,7 @@ margin_left = -176.0
 margin_top = -114.0
 margin_right = 176.0
 margin_bottom = -97.0
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 3 )
 text = "© 2019 Tink Inc."
 align = 1
 
@@ -76,6 +80,7 @@ anchor_bottom = 1.0
 margin_left = 18.0
 margin_top = -17.0
 margin_right = 146.0
-custom_fonts/font = ExtResource( 5 )
+custom_fonts/font = ExtResource( 6 )
 text = "Credit 0"
 
+[connection signal="finished" from="Start/Coin" to="Start" method="_on_Coin_finished"]
