@@ -11,7 +11,7 @@ var touch_pos = Vector2()
 
 func _ready():
 	position.x = screensize.x/2
-	position.y = screensize.y-30
+	position.y = screensize.y-40
 	set_process_input(true)
 	
 func _process(delta):
@@ -28,7 +28,7 @@ func set_position(pos):
 func shoot():
 	for i in [-1, 1]:
 		var missile = Missile.instance()
-		missile.position = position - Vector2(i*hitbox.x, hitbox.y*2)
+		missile.position = position - Vector2(i*hitbox.x-4*i, hitbox.y*1.5)
 		get_parent().get_node('Missile').add_child(missile)
 #		globals.score += 1
 	

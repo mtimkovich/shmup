@@ -5,6 +5,7 @@
 
 [sub_resource type="RectangleShape2D" id=1]
 
+extents = Vector2( 4.07661, 10 )
 
 [node name="Missile" type="RigidBody2D"]
 collision_mask = 0
@@ -20,5 +21,6 @@ texture = ExtResource( 2 )
 shape = SubResource( 1 )
 
 [node name="Visibility" type="VisibilityNotifier2D" parent="."]
+scale = Vector2( 0.458044, 1 )
 
 [connection signal="screen_exited" from="Visibility" to="." method="_on_Visibility_screen_exited"]
