@@ -16,11 +16,11 @@ An unimaginatively named shmup game made using [Godot][godot].
 
 ## Credits
 - Sprites by [Master484][master484]
-- Sound effects by [quobodup][quobodup] and [bart][bart]
+- Sound effects by [qubodup][qubodup] and [bart][bart]
 - Background image by [ASDFGHJKLDQREW][bg]
 
 [godot]: https://godotengine.org/
 [bg]: https://www.deviantart.com/asdfghjkldqrew/art/Space-743777252
 [master484]: https://opengameart.org/users/master484
-[quobodup]: https://opengameart.org/users/quobodup
+[qubodup]: https://opengameart.org/users/qubodup
 [bart]: https://opengameart.org/users/bart
