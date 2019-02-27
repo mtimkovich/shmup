@@ -7,6 +7,7 @@ An unimaginatively named shmup game made using [Godot][godot].
 - [x] Missiles
 - [X] Score and Lives
 - [X] Background image
+- [X] Animated background
 - [ ] Enemies
 - [ ] Enemy patterns
 - [x] Start and End Screen
@@ -17,6 +18,7 @@ An unimaginatively named shmup game made using [Godot][godot].
 ## Credits
 - Sprites by [Master484][master484]
 - Sound effects by [qubodup][qubodup] and [bart][bart]
+- Music by [Joth][joth]
 - Background image by [ASDFGHJKLDQREW][bg]
 
 [godot]: https://godotengine.org/
@@ -24,3 +26,4 @@ An unimaginatively named shmup game made using [Godot][godot].
 [master484]: https://opengameart.org/users/master484
 [qubodup]: https://opengameart.org/users/qubodup
 [bart]: https://opengameart.org/users/bart
+[joth]: https://opengameart.org/users/joth
