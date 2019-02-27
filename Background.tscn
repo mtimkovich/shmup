@@ -1,21 +1,11 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://starmap.tres" type="TileSet" id=1]
-[ext_resource path="res://TileMap.gd" type="Script" id=2]
+[ext_resource path="res://space.tres" type="TileSet" id=1]
 
 [node name="Background" type="Node2D"]
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource( 1 )
 format = 1
 tile_data = PoolIntArray( 0, 0, 0, 5, 0, 0, 262144, 0, 0, 262149, 0, 0, 524288, 0, 0, 524293, 0, 0 )
-script = ExtResource( 2 )
 
-[node name="AnimateTimer" type="Timer" parent="TileMap"]
-wait_time = 0.05
-autostart = true
-
-[connection signal="timeout" from="TileMap/AnimateTimer" to="TileMap" method="_on_Timer_timeout"]
