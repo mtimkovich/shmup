@@ -18,7 +18,7 @@
 
 [sub_resource type="AnimatedTexture" id=1]
 frames = 15
-fps = 3.0
+fps = 20.0
 frame_0/texture = ExtResource( 1 )
 frame_1/texture = ExtResource( 2 )
 frame_1/delay_sec = 0.0
