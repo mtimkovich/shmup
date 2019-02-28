@@ -9,12 +9,15 @@
 [ext_resource path="res://sfx/Cyberpunk Moonlight Sonata.ogg" type="AudioStream" id=7]
 
 [sub_resource type="DynamicFont" id=1]
+
 font_data = ExtResource( 3 )
 
 [sub_resource type="DynamicFont" id=2]
+
 font_data = ExtResource( 3 )
 
 [sub_resource type="DynamicFont" id=3]
+
 font_data = ExtResource( 3 )
 
 [node name="Title" type="Control"]
@@ -57,7 +60,10 @@ script = ExtResource( 4 )
 [node name="Coin" type="AudioStreamPlayer" parent="StartArea/Start"]
 stream = ExtResource( 5 )
 
-[node name="Timer" type="Timer" parent="StartArea/Start"]
+[node name="Timer" type="Timer" parent="StartArea/Start/Coin"]
+one_shot = true
+
+[node name="Blink" type="Timer" parent="StartArea/Start"]
 wait_time = 0.42
 autostart = true
 
@@ -106,5 +112,5 @@ stream = ExtResource( 7 )
 autoplay = true
 
 [connection signal="gui_input" from="StartArea" to="StartArea/Start" method="_on_StartArea_gui_input"]
-[connection signal="finished" from="StartArea/Start/Coin" to="StartArea/Start" method="_on_Coin_finished"]
-[connection signal="timeout" from="StartArea/Start/Timer" to="StartArea/Start" method="_on_Timer_timeout"]
+[connection signal="timeout" from="StartArea/Start/Coin/Timer" to="StartArea/Start" method="_on_Coin_timeout"]
+[connection signal="timeout" from="StartArea/Start/Blink" to="StartArea/Start" method="_on_Blink_timeout"]
